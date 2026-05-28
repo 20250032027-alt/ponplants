@@ -2,62 +2,45 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#1c1a16', color: '#a8a29e' }} className="mt-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div style={{ backgroundColor: '#4a7c3f' }} className="w-7 h-7 rounded-lg flex items-center justify-center text-white">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                  <path d="M12 2a10 10 0 0 1 0 20"/>
-                  <path d="M12 2C6.5 2 2 6.5 2 12"/>
-                  <path d="M12 12c0-4 2-7 5-9"/>
-                  <path d="M12 12c-3 0-5 1.5-6 4"/>
-                </svg>
+    <footer style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)', marginTop: 0 }}>
+      <div className="page-wrap" style={{ padding: '48px 24px 36px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: 32, marginBottom: 40 }}>
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
+              <div style={{ width: 28, height: 28, borderRadius: 8, background: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round"><path d="M12 22V12"/><path d="M12 12C12 7 9 4 5 3"/><path d="M12 12c0-5 3-8 7-9"/><path d="M5 19c2-3 4-5 7-7"/></svg>
               </div>
-              <span className="font-display font-semibold text-base text-white">PonPlants</span>
+              <span style={{ fontFamily: 'Instrument Serif, serif', fontWeight: 400, fontSize: 17, color: 'var(--text-1)' }}>PonPlants</span>
             </div>
-            <p className="text-sm leading-relaxed">
-              The definitive semi-hydro troubleshooting resource. Built from real grower questions, not guesswork.
+            <p style={{ fontSize: 13, color: 'var(--text-4)', lineHeight: 1.6, margin: 0 }}>
+              Built from real grower posts. No generic advice.
             </p>
           </div>
-
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest mb-4 text-white">Guides</h4>
-            <ul className="space-y-2.5 text-sm">
-              <li><Link href="/leca-vs-pon" className="hover:text-white transition-colors">LECA vs Pon Comparison</Link></li>
-              <li><Link href="/root-rot" className="hover:text-white transition-colors">Root Rot Diagnosis</Link></li>
-              <li><Link href="/transition" className="hover:text-white transition-colors">Soil to Semi-Hydro</Link></li>
-              <li><Link href="/fertilizer" className="hover:text-white transition-colors">Fertilizer Dosing</Link></li>
-            </ul>
+            <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-4)', marginBottom: 12 }}>Guides</p>
+            {[['LECA vs Pon', '/leca-vs-pon'], ['Root Rot', '/root-rot'], ['Soil Transition', '/transition'], ['Fertilizer', '/fertilizer']].map(([l, h]) => (
+              <Link key={h} href={h} style={{ display: 'block', padding: '5px 0', fontSize: 14, color: 'var(--text-3)', textDecoration: 'none' }}
+              >{l}</Link>
+            ))}
           </div>
-
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest mb-4 text-white">Tools</h4>
-            <ul className="space-y-2.5 text-sm">
-              <li><Link href="/tools#reservoir" className="hover:text-white transition-colors">Reservoir Calculator</Link></li>
-              <li><Link href="/tools#root-rot-checker" className="hover:text-white transition-colors">Root Rot Checker</Link></li>
-              <li><Link href="/tools#fertilizer-calc" className="hover:text-white transition-colors">Fertilizer Dosing Chart</Link></li>
-            </ul>
+            <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-4)', marginBottom: 12 }}>Tools</p>
+            {[['Reservoir Calculator', '/tools/reservoir'], ['Root Rot Checker', '/tools/root-rot-checker'], ['Fertilizer Chart', '/tools/fertilizer-chart']].map(([l, h]) => (
+              <Link key={h} href={h} style={{ display: 'block', padding: '5px 0', fontSize: 14, color: 'var(--text-3)', textDecoration: 'none' }}
+              >{l}</Link>
+            ))}
           </div>
-
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest mb-4 text-white">Plants</h4>
-            <ul className="space-y-2.5 text-sm">
-              <li><Link href="/plants/alocasia" className="hover:text-white transition-colors">Alocasia in Semi-Hydro</Link></li>
-              <li><Link href="/plants/pothos" className="hover:text-white transition-colors">Pothos in LECA</Link></li>
-              <li><Link href="/plants/monstera" className="hover:text-white transition-colors">Monstera in Pon</Link></li>
-            </ul>
+            <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-4)', marginBottom: 12 }}>By Plant</p>
+            {[['Alocasia', '/plants/alocasia'], ['Pothos', '/plants/pothos'], ['Monstera', '/plants/monstera']].map(([l, h]) => (
+              <Link key={h} href={h} style={{ display: 'block', padding: '5px 0', fontSize: 14, color: 'var(--text-3)', textDecoration: 'none' }}
+              >{l}</Link>
+            ))}
           </div>
         </div>
-
-        <div style={{ borderTop: '1px solid #292524' }} className="mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs">© 2025 PonPlants. For plant lovers by plant lovers.</p>
-          <p className="text-xs">
-            Data sourced from the{' '}
-            <a href="https://reddit.com/r/SemiHydro" target="_blank" rel="noopener noreferrer" className="underline hover:text-white transition-colors">r/SemiHydro</a>
-            {' '}community.
-          </p>
+        <div style={{ borderTop: '1px solid var(--border)', paddingTop: 20, display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
+          <p style={{ fontSize: 12, color: 'var(--text-4)', margin: 0 }}>Built from r/SemiHydro community data.</p>
+          <p style={{ fontSize: 12, color: 'var(--text-4)', margin: 0 }}>© 2025 PonPlants</p>
         </div>
       </div>
     </footer>
