@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import HomeClient from './HomeClient'
 
 const faqs = [
   {
