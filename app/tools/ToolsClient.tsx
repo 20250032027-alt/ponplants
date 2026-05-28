@@ -152,7 +152,7 @@ function ReservoirCalculator() {
               <div key={i} style={{ padding: '20px 22px', borderRadius: 14, backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0' }}>
                 <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', color: '#166534', marginBottom: 6 }}>{r.label}</p>
                 <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.6rem', fontWeight: 700, color: '#14532d', margin: '0 0 4px' }}>{r.value}</p>
-                <p style={{ fontSize: 12, color: '#4ade80', margin: 0, color: '#15803d' }}>{r.sub}</p>
+                <p style={{ fontSize: 12, color: '#15803d', margin: 0 }}>{r.sub}</p>
               </div>
             ))}
           </div>
