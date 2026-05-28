@@ -1,54 +1,10 @@
 import Link from 'next/link'
-
-const guides = [
-  {
-    href: '/leca-vs-pon',
-    eyebrow: '126 posts each, zero clean comparisons found',
-    title: 'LECA vs Pon',
-    desc: 'Both get mentioned constantly. Nobody was comparing them properly. This page does.',
-    accent: '#4a7c3f',
-  },
-  {
-    href: '/root-rot',
-    eyebrow: 'Top-voted troubleshooting posts',
-    title: 'Root Rot Diagnosis',
-    desc: 'Brown roots, mushy stems, bad smell work through the decision tree and figure out what is actually wrong.',
-    accent: '#be5e30',
-  },
-  {
-    href: '/transition',
-    eyebrow: '28 transition posts, 54 for Alocasia alone',
-    title: 'Soil to Semi-Hydro',
-    desc: 'The bare-root rinse method, what to expect in the first two weeks, and which plants adapt fastest.',
-    accent: '#5d8c3d',
-  },
-  {
-    href: '/fertilizer',
-    eyebrow: '19 posts, no dosing chart anywhere',
-    title: 'Fertilizer Dosing',
-    desc: 'Semi-hydro skips soil microbes, so nutrients matter more. Here is what to use and how much.',
-    accent: '#cc743b',
-  },
-  {
-    href: '/tools',
-    eyebrow: 'The #1 question in the community',
-    title: 'Reservoir Calculator',
-    desc: 'Input your plant, pot size, and environment. Get a reservoir depth and water level to maintain.',
-    accent: '#4a7c3f',
-  },
-  {
-    href: '/tools#root-rot-checker',
-    eyebrow: 'Step-by-step decision tree',
-    title: 'Root Rot Checker',
-    desc: 'Answer a few questions about your plant and get a likely diagnosis with specific next steps.',
-    accent: '#be5e30',
-  },
-]
+import HomeClient from './HomeClient'
 
 const faqs = [
   {
     q: 'My reservoir empties in a single day. Is that normal?',
-    a: 'For a large Alocasia in a warm room, it can be. Active growers in the community report some plants drinking 200 to 400ml per day. If it is a smaller plant or the weather is mild, a one-day drain usually points to the pot being undersized for the root mass, or the plant running hot. The reservoir calculator helps you size it right.',
+    a: 'For a large Alocasia in a warm room, it can be. Active growers report some plants drinking 200 to 400ml per day. If it is a smaller plant or the weather is mild, a one-day drain usually points to the pot being undersized for the root mass, or the plant running hot. The reservoir calculator helps you size it right.',
     link: '/tools',
     linkLabel: 'Use the calculator',
   },
@@ -91,18 +47,60 @@ const proofPoints = [
   { value: '344', label: 'upvotes on the top reservoir post' },
 ]
 
+const guides = [
+  {
+    href: '/leca-vs-pon',
+    eyebrow: '126 posts each, zero clean comparisons found online',
+    title: 'LECA vs Pon',
+    desc: 'Both get mentioned constantly. Nobody was comparing them properly. This page does.',
+    accent: '#4a7c3f',
+  },
+  {
+    href: '/root-rot',
+    eyebrow: 'Top-voted troubleshooting posts',
+    title: 'Root Rot Diagnosis',
+    desc: 'Brown roots, mushy stems, bad smell. Work through the decision tree and figure out what is actually wrong.',
+    accent: '#be5e30',
+  },
+  {
+    href: '/transition',
+    eyebrow: '28 transition posts, 54 for Alocasia alone',
+    title: 'Soil to Semi-Hydro',
+    desc: 'The bare-root rinse method, what to expect in the first two weeks, and which plants adapt fastest.',
+    accent: '#5d8c3d',
+  },
+  {
+    href: '/fertilizer',
+    eyebrow: '19 posts, no dosing chart anywhere',
+    title: 'Fertilizer Dosing',
+    desc: 'Semi-hydro skips soil microbes, so nutrients matter more. Here is what to use and how much.',
+    accent: '#cc743b',
+  },
+  {
+    href: '/tools',
+    eyebrow: 'The number-one question in the community',
+    title: 'Reservoir Calculator',
+    desc: 'Input your plant, pot size, and environment. Get a reservoir depth and water level to maintain.',
+    accent: '#4a7c3f',
+  },
+  {
+    href: '/tools#root-rot-checker',
+    eyebrow: 'Step-by-step decision tree',
+    title: 'Root Rot Checker',
+    desc: 'Answer a few questions about your plant and get a likely diagnosis with specific next steps.',
+    accent: '#be5e30',
+  },
+]
+
 export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section
-        style={{
-          background: 'linear-gradient(150deg, #181612 0%, #1e2b18 60%, #1a1e14 100%)',
-          position: 'relative',
-          overflow: 'hidden',
-        }}
-      >
-        {/* Ambient glow */}
+      <section style={{
+        background: 'linear-gradient(150deg, #181612 0%, #1e2b18 60%, #1a1e14 100%)',
+        position: 'relative',
+        overflow: 'hidden',
+      }}>
         <div style={{
           position: 'absolute', top: '-10%', right: '-5%',
           width: '55vw', height: '55vw', maxWidth: 700,
@@ -119,7 +117,6 @@ export default function Home() {
         }} />
 
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 24px 90px' }}>
-          {/* Two-column split layout */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}
             className="hero-grid">
             <div>
@@ -129,7 +126,7 @@ export default function Home() {
                 backgroundColor: 'rgba(74,124,63,0.15)',
                 border: '1px solid rgba(74,124,63,0.25)',
                 color: '#7faa5b', fontSize: 12, fontWeight: 600,
-                letterSpacing: '0.05em', textTransform: 'uppercase',
+                letterSpacing: '0.05em', textTransform: 'uppercase' as const,
                 marginBottom: 24,
               }}>
                 <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#7faa5b', display: 'inline-block' }} />
@@ -159,7 +156,6 @@ export default function Home() {
                   backgroundColor: '#4a7c3f', color: '#fff',
                   fontWeight: 600, fontSize: 15,
                   textDecoration: 'none', display: 'inline-block',
-                  transition: 'opacity 0.2s',
                 }}>
                   Reservoir Calculator
                 </Link>
@@ -175,7 +171,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: proof stats */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
               {proofPoints.map((p, i) => (
                 <div key={i} style={{
@@ -199,7 +194,7 @@ export default function Home() {
 
       {/* GUIDES GRID */}
       <section style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 24px' }}>
-        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4a7c3f', marginBottom: 12 }}>
+        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#4a7c3f', marginBottom: 12 }}>
           Core guides
         </p>
         <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 700, color: '#1c1a16', marginBottom: 8, letterSpacing: '-0.02em' }}>
@@ -211,26 +206,15 @@ export default function Home() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 20 }}>
           {guides.map((g, i) => (
-            <Link key={i} href={g.href} style={{ textDecoration: 'none' }}>
+            <Link key={i} href={g.href} style={{ textDecoration: 'none', display: 'block' }}>
               <div style={{
                 padding: '28px',
                 borderRadius: 18,
                 backgroundColor: '#f7f4f0',
                 border: '1px solid #e8e4de',
                 height: '100%',
-                transition: 'transform 0.18s ease, box-shadow 0.18s ease',
-                cursor: 'pointer',
-              }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-3px)'
-                  ;(e.currentTarget as HTMLDivElement).style.boxShadow = '0 10px 40px rgba(0,0,0,0.08)'
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'
-                  ;(e.currentTarget as HTMLDivElement).style.boxShadow = 'none'
-                }}
-              >
-                <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.07em', textTransform: 'uppercase', color: g.accent, marginBottom: 14 }}>
+              }}>
+                <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.07em', textTransform: 'uppercase' as const, color: g.accent, marginBottom: 14 }}>
                   {g.eyebrow}
                 </p>
                 <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.35rem', fontWeight: 700, color: '#1c1a16', marginBottom: 10 }}>
@@ -251,31 +235,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MARQUEE STRIP */}
-      <div style={{ backgroundColor: '#4a7c3f', overflow: 'hidden', padding: '14px 0' }}>
-        <div style={{
-          display: 'flex', gap: 48,
-          animation: 'marquee 22s linear infinite',
-          whiteSpace: 'nowrap',
-          color: 'rgba(255,255,255,0.7)', fontSize: 13, fontWeight: 500,
-        }}>
-          {[...Array(3)].map((_, i) => (
-            <span key={i} style={{ display: 'flex', gap: 48, flexShrink: 0 }}>
-              {['LECA vs Pon', 'Root Rot Diagnosis', 'Reservoir Sizing', 'Fertilizer Dosing', 'Soil Transitions', 'Alocasia Care', 'Pot Comparisons', 'Flushing Guide'].map(t => (
-                <span key={t} style={{ color: 'rgba(255,255,255,0.8)' }}>
-                  <span style={{ color: '#fff', marginRight: 48 }}>{t}</span>
-                </span>
-              ))}
-            </span>
+      {/* SCROLLING STRIP — static, no animation to avoid timeout */}
+      <div style={{ backgroundColor: '#4a7c3f', padding: '14px 0', overflow: 'hidden' }}>
+        <div style={{ display: 'flex', gap: 48, padding: '0 24px', flexWrap: 'wrap', justifyContent: 'center' }}>
+          {['LECA vs Pon', 'Root Rot Diagnosis', 'Reservoir Sizing', 'Fertilizer Dosing', 'Soil Transitions', 'Alocasia Care', 'Pot Comparisons', 'Flushing Guide'].map(t => (
+            <span key={t} style={{ color: 'rgba(255,255,255,0.85)', fontSize: 13, fontWeight: 500 }}>{t}</span>
           ))}
         </div>
-        <style>{`@keyframes marquee { 0% { transform: translateX(0) } 100% { transform: translateX(-33.333%) } }`}</style>
       </div>
 
-      {/* FAQ SECTION */}
+      {/* FAQ */}
       <section style={{ backgroundColor: '#f3f0eb' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 24px' }}>
-          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4a7c3f', marginBottom: 12 }}>
+          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#4a7c3f', marginBottom: 12 }}>
             What growers actually ask
           </p>
           <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 700, color: '#1c1a16', marginBottom: 48, letterSpacing: '-0.02em' }}>
@@ -325,7 +297,7 @@ export default function Home() {
             pointerEvents: 'none',
           }} />
           <div style={{ position: 'relative', maxWidth: 560 }}>
-            <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#7faa5b', marginBottom: 16 }}>
+            <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#7faa5b', marginBottom: 16 }}>
               Data signal
             </p>
             <p style={{
