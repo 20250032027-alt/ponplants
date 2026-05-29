@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'Root Rot Diagnosis and Fix' }
+export const metadata: Metadata = {
+  title: 'Root Rot Diagnosis and Fix',
+  description: 'Step-by-step root rot diagnosis for LECA and Pon growers. Symptom guide, five causes with fixes, treatment protocol, and an interactive checker.',
+  openGraph: { title: 'Root Rot Diagnosis and Fix | PonPlants', description: 'Symptom guide, decision tree, and treatment protocol for semi-hydro root rot.' },
+}
 
 const symptoms = [
   { label: 'Root color',  healthy: 'White to light tan. Firm when squeezed.',              warning: 'Light brown. Slightly soft.',                    danger: 'Dark brown or black. Mushy. Hollow when squeezed.' },
@@ -14,7 +18,7 @@ const symptoms = [
 const causes = [
   {
     num: '01', title: 'Anaerobic reservoir water',
-    body: 'The most common cause. When reservoir water sits stagnant with no airspace above it, oxygen depletes and anaerobic bacteria take over. They produce hydrogen sulfide — the sewage smell — which kills roots rapidly.',
+    body: 'The most common cause. When reservoir water sits stagnant with no airspace above it, oxygen depletes and anaerobic bacteria take over. They produce hydrogen sulfide (the sewage smell), which kills roots rapidly.',
     fix: 'Leave 2 to 4cm between your water level and the base of your substrate. Refresh the reservoir fully every 1 to 2 weeks.',
   },
   {
@@ -29,12 +33,12 @@ const causes = [
   },
   {
     num: '04', title: 'Transition die-off misread as rot',
-    body: 'Plants coming from soil grow soil roots, which often die back during transition. Dry, firm, brown roots from a recent transition are normal die-off — not active rot.',
+    body: 'Plants coming from soil grow soil roots, which often die back during transition. Dry, firm, brown roots from a recent transition are normal die-off, not active rot.',
     fix: 'Check texture before acting. Dry, firm, brown roots are fine. Only soft, mushy, smelly roots are a problem. Trim and move on.',
   },
   {
     num: '05', title: 'Fertilizer salt buildup',
-    body: 'High salt concentration in the reservoir damages root cells directly. Roots brown from the tips inward and cannot uptake water — often misdiagnosed as rot when it is actually chemical burn.',
+    body: 'High salt concentration in the reservoir damages root cells directly. Roots brown from the tips inward and cannot uptake water. Often misdiagnosed as rot when it is actually chemical burn.',
     fix: 'Flush with plain, pH-adjusted water every 4 to 6 weeks. If white crust is visible on the substrate, flush immediately.',
   },
 ]

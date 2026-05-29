@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'Fertilizer and Nutrient Dosing' }
+export const metadata: Metadata = {
+  title: 'Fertilizer and Nutrient Dosing',
+  description: 'What fertilizer to use in LECA and Pon, how much, when to start, and when to flush. Includes nutrient deficiency guide and fertilizer comparison.',
+  openGraph: { title: 'Fertilizer and Nutrient Dosing | PonPlants', description: 'Complete fertilizer guide for semi-hydro. Dosing chart, flush schedule, and nutrient deficiency reference.' },
+}
 
 const nutrients = [
   { name: 'Nitrogen (N)',    role: 'Leaf and stem growth',              deficiency: 'Yellowing starting in older leaves',             excess: 'Dark green leaves, weak stems, root burn' },
@@ -17,7 +21,7 @@ const fertilizers = [
     name: 'Dyna-Gro Foliage Pro',
     tag: 'Community favorite', tagColor: 'green',
     npk: '9-3-6',
-    body: 'The consistent community pick. Contains all 16 essential nutrients including calcium and magnesium — no supplements needed. Note: Superthrive acquired Dyna-Gro Foliage Pro. Labels may say either name depending on stock, but the formula is identical.',
+    body: 'The consistent community pick. Contains all 16 essential nutrients including calcium and magnesium. No supplements needed. Note: Superthrive acquired Dyna-Gro Foliage Pro. Labels may say either name depending on stock, but the formula is identical.',
     dose: '1/4 to 1/2 tsp per gallon of water, every watering',
   },
   {

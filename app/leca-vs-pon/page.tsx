@@ -1,17 +1,21 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'LECA vs Pon — Full Comparison' }
+export const metadata: Metadata = {
+  title: 'LECA vs Pon: Full Comparison',
+  description: 'A real side-by-side of LECA and Lechuza Pon. Cost, moisture retention, root behavior, best plants for each, myth debunking, and when to mix them.',
+  openGraph: { title: 'LECA vs Pon: Full Comparison | PonPlants', description: 'Factual breakdown of LECA and Lechuza Pon for semi-hydro growers.' },
+}
 
 const rows = [
-  { trait: 'Material',            leca: 'Expanded clay aggregate — fired clay balls, 8 to 16mm', pon: 'Mineral blend of zeolite, pumice, and lava rock' },
-  { trait: 'Moisture retention',  leca: 'Lower — dries faster between reservoir top-ups',         pon: 'Higher — stays damp longer without waterlogging' },
+  { trait: 'Material',            leca: 'Expanded clay aggregate, fired clay balls, 8 to 16mm', pon: 'Mineral blend of zeolite, pumice, and lava rock' },
+  { trait: 'Moisture retention',  leca: 'Lower. Dries faster between reservoir top-ups',         pon: 'Higher, stays damp longer without waterlogging' },
   { trait: 'Weight',              leca: 'Light when dry, moderate when wet',                        pon: 'Consistently heavier than LECA' },
-  { trait: 'Drainage speed',      leca: 'Very fast — air gap resets quickly',                       pon: 'Moderate — stays damp for longer' },
-  { trait: 'Nutrient retention',  leca: 'Low — fertilizer flushes through quickly',                 pon: 'Moderate — zeolite holds some cations' },
-  { trait: 'Root aeration',       leca: 'Excellent — large air pockets between balls',              pon: 'Good — smaller pore size but still airy' },
-  { trait: 'Reusability',         leca: 'High — rinse, sterilize, reuse indefinitely',              pon: 'Lower — degrades over a few years' },
-  { trait: 'Cost',                leca: 'Low — available in bulk at most garden centres',           pon: 'Higher — Lechuza bags are expensive' },
+  { trait: 'Drainage speed',      leca: 'Very fast. Air gap resets quickly',                       pon: 'Moderate, stays damp for longer' },
+  { trait: 'Nutrient retention',  leca: 'Low. Fertilizer flushes through quickly',                 pon: 'Moderate, zeolite holds some cations' },
+  { trait: 'Root aeration',       leca: 'Excellent. Large air pockets between balls',              pon: 'Good, smaller pore size but still airy' },
+  { trait: 'Reusability',         leca: 'High. Rinse, sterilize, reuse indefinitely',              pon: 'Lower. Degrades over a few years' },
+  { trait: 'Cost',                leca: 'Low. Available in bulk at most garden centres',           pon: 'Higher. Lechuza bags are expensive' },
   { trait: 'Salt buildup',        leca: 'Visible as white crust on the balls',                      pon: 'Less visible but still accumulates' },
   { trait: 'Best plants',         leca: 'Philodendron, Pothos, Monstera, Epipremnum',               pon: 'Alocasia, Anthurium, Calathea, orchids' },
 ]
@@ -33,7 +37,7 @@ export default function LecaVsPon() {
         </Link>
         <span className="eyebrow">126 posts each, zero clean comparisons online</span>
         <h1 className="serif" style={{ fontSize: 'clamp(1.9rem, 4vw, 2.8rem)', color: 'var(--text-1)', marginBottom: 12 }}>
-          LECA vs Pon — the comparison nobody wrote
+          LECA vs Pon: the comparison nobody wrote
         </h1>
         <p className="prose">
           Both get mentioned constantly. Growers pick sides without much data behind them. Here is a factual breakdown of what each medium actually does so you can choose based on your plants and habits rather than forum opinions.
@@ -87,7 +91,7 @@ export default function LecaVsPon() {
               <span className="eyebrow">Alocasia specifically</span>
               <h2 className="serif" style={{ fontSize: '1.4rem', color: 'var(--text-1)', marginBottom: 12 }}>Why Pon keeps winning for Alocasia</h2>
               <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--text-2)', marginBottom: 14 }}>
-                The community data is consistent here. Growers report bigger leaves and faster growth in Pon than in LECA for the same plant. The most likely reason is moisture consistency — Alocasia want their roots slightly damp at all times. Pon holds enough moisture between top-ups that the roots never fully dry out, while LECA can swing too dry if the reservoir gets low.
+                The community data is consistent here. Growers report bigger leaves and faster growth in Pon than in LECA for the same plant. The most likely reason is moisture consistency. Alocasia want their roots slightly damp at all times. Pon holds enough moisture between top-ups that the roots never fully dry out, while LECA can swing too dry if the reservoir gets low.
               </p>
               <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--text-2)', margin: 0 }}>
                 LECA does work for Alocasia. One grower documented 90 days in LECA with leaf sizes double what the plant produced in soil and a new leaf every two weeks. But Pon is more forgiving if you are less consistent with top-ups.

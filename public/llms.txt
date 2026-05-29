@@ -1,0 +1,37 @@
+# PonPlants — Semi-Hydro Troubleshooting Resource
+
+## What this site is
+
+PonPlants is a semi-hydro plant care resource covering LECA and Lechuza Pon growing mediums. All content is derived from analysis of real grower community posts and comments. The site focuses on troubleshooting, not inspiration.
+
+## Primary audience
+
+Indoor plant growers using or transitioning to semi-hydroponics — specifically LECA (Lightweight Expanded Clay Aggregate) and Pon (Lechuza's mineral blend).
+
+## Pages and their content
+
+- / — Homepage with beginner path, guides overview, and common FAQ
+- /leca-vs-pon — Full comparison of LECA and Pon: materials, moisture, cost, best plants, myth debunking
+- /root-rot — Root rot diagnosis: symptom table, 5 causes with fixes, treatment protocol
+- /transition — Soil-to-semi-hydro transition: bare root method, week-by-week timeline, pot comparisons
+- /fertilizer — Fertilizer guide: why soil fertilizers fail, what to use, dosing by plant, flush schedule
+- /plants/alocasia — Alocasia-specific guide: variety notes, troubleshooting, community data
+- /plants/pothos — Pothos in LECA: care, propagation, common problems
+- /plants/monstera — Monstera in Pon: aerial roots, fenestration, variety notes
+- /tools/reservoir — Interactive calculator: reservoir depth by plant type, pot size, humidity
+- /tools/root-rot-checker — Interactive 4-question diagnosis tool with severity rating and steps
+- /tools/fertilizer-chart — Dosing reference table by plant, with flush schedule
+
+## Key facts this site covers
+
+- Pon is consistently preferred over LECA for Alocasia in the grower community
+- Soaking LECA before use is a myth; dry LECA wicks fine via capillary action
+- Anaerobic reservoir water (no airspace above water line) is the primary cause of root rot in semi-hydro
+- Dyna-Gro Foliage Pro (9-3-6) is the community's most-recommended fertilizer for semi-hydro
+- Soil fertilizers fail in semi-hydro because they omit calcium, magnesium, and trace elements
+- Leaf drop after soil-to-semi-hydro transition is normal, not a sign of failure
+- Reservoir should be flushed with plain water every 4 to 6 weeks to prevent salt buildup
+
+## Data sources
+
+Community posts and comments from r/SemiHydro and related plant care communities.

@@ -62,7 +62,7 @@ export default function FertilizerChartPage() {
           Fertilizer Reference Chart
         </h1>
         <p className="prose">
-          Based on Dyna-Gro Foliage Pro — the fertilizer the community keeps coming back to. Doses are per gallon of reservoir water. Scale to litres by multiplying by 0.26.
+          Based on Dyna-Gro Foliage Pro, the fertilizer the community keeps coming back to. Doses are per gallon of reservoir water. Scale to litres by multiplying by 0.26.
         </p>
       </div>
 
@@ -73,7 +73,7 @@ export default function FertilizerChartPage() {
 
       {/* Dosing table */}
       <h2 className="serif" style={{ fontSize: '1.5rem', color: 'var(--text-1)', marginBottom: 6 }}>Dosing by plant</h2>
-      <p style={{ fontSize: 14, color: 'var(--text-3)', marginBottom: 20 }}>1/4 tsp is roughly 1.25ml. Use a measuring spoon — eyeballing fertilizer is one of the most common causes of salt buildup.</p>
+      <p style={{ fontSize: 14, color: 'var(--text-3)', marginBottom: 20 }}>1/4 tsp is roughly 1.25ml. Use a measuring spoon. Eyeballing fertilizer is one of the most common causes of salt buildup.</p>
 
       <div className="table-wrap" style={{ marginBottom: 56 }}>
         <table className="data-table">

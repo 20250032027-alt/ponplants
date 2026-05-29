@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'Soil to Semi-Hydro Transition' }
+export const metadata: Metadata = {
+  title: 'Soil to Semi-Hydro Transition',
+  description: 'How to transition plants from soil to LECA or Pon. Bare-root rinse method, week-by-week timeline, pot system comparisons, and what leaf drop actually means.',
+  openGraph: { title: 'Soil to Semi-Hydro Transition | PonPlants', description: 'Step-by-step guide to transitioning from soil to LECA or Pon.' },
+}
 
 export default function Transition() {
   return (
@@ -25,7 +29,7 @@ export default function Transition() {
           {/* Method 1 */}
           <section style={{ marginBottom: 56 }}>
             <h2 className="serif" style={{ fontSize: '1.6rem', color: 'var(--text-1)', marginBottom: 6 }}>
-              Bare root rinse — the standard method
+              Bare root rinse (the standard method)
             </h2>
             <p style={{ fontSize: 14, color: 'var(--text-3)', marginBottom: 24 }}>Works for most healthy plants including Alocasia, Philodendron, and Anthurium.</p>
 
@@ -36,10 +40,10 @@ export default function Transition() {
             <ol className="step-list">
               {[
                 'Remove the plant from its pot. Shake off as much soil as you can by hand.',
-                'Rinse roots under room-temperature water until no soil is left. Be thorough — trapped soil creates anaerobic pockets.',
+                'Rinse roots under room-temperature water until no soil is left. Be thorough. Trapped soil creates anaerobic pockets.',
                 'Trim any dead, mushy, or damaged roots with sterilized scissors.',
                 'Let roots air dry for 20 to 30 minutes. This lets cut surfaces callous slightly.',
-                'Place in your chosen substrate with a small initial reservoir — 2cm of water to start.',
+                'Place in your chosen substrate with a small initial reservoir (2cm of water) to start.',
                 'Keep in bright indirect light. Do not fertilize for the first two weeks.',
               ].map((s, i) => (
                 <li key={i} className="step-item">
@@ -62,7 +66,7 @@ export default function Transition() {
                 'Place a bare-rooted cutting or plant directly into clean, plain water.',
                 'Keep in bright indirect light for 2 to 6 weeks until water roots develop.',
                 'Transition to substrate once roots are 3 to 5cm long.',
-                'Keep roots moist during the substrate transfer — do not let them dry out.',
+                'Keep roots moist during the substrate transfer, do not let them dry out.',
               ].map((s, i) => (
                 <li key={i} className="step-item">
                   <div className="step-num">{i + 1}</div>
@@ -85,8 +89,8 @@ export default function Transition() {
               <div style={{ position: 'absolute', left: 13, top: 14, bottom: 14, width: 2, background: 'var(--border)' }} />
               {[
                 { period: 'Day 1 to 3', title: 'Nothing visible happens', body: 'The plant is processing a major change. Do not top-up water, do not move it, do not add fertilizer. Just let it sit.', warn: 'Any soft or mushy tissue at the stem base is worth investigating now.' },
-                { period: 'Week 1 to 2', title: 'Possible leaf drop', body: 'Some plants — especially Alocasia — drop a leaf or two. The plant is redirecting energy toward growing new water roots rather than supporting existing foliage. This is expected.', warn: 'Stem softness at the base is a concern. Leaf drop alone is not.' },
-                { period: 'Week 2 to 4', title: 'White root tips appear', body: 'Look for bright white root tips pushing through the substrate or visible through a clear pot. This is when you can start a diluted fertilizer — quarter strength.', warn: 'Brown, soft roots at this stage mean something went wrong with aeration. Pull and inspect.' },
+                { period: 'Week 1 to 2', title: 'Possible leaf drop', body: 'Some plants (especially Alocasia) drop a leaf or two. The plant is redirecting energy toward growing new water roots rather than supporting existing foliage. This is expected.', warn: 'Stem softness at the base is a concern. Leaf drop alone is not.' },
+                { period: 'Week 2 to 4', title: 'White root tips appear', body: 'Look for bright white root tips pushing through the substrate or visible through a clear pot. This is when you can start a diluted fertilizer, quarter strength.', warn: 'Brown, soft roots at this stage mean something went wrong with aeration. Pull and inspect.' },
                 { period: 'Month 2 onward', title: 'New leaf growth resumes', body: 'Once a full water root system is established, most plants outpace their soil-growth rates. Leaves tend to come in larger and faster.', warn: null },
               ].map((t, i) => (
                 <div key={i} style={{ display: 'grid', gridTemplateColumns: '28px 1fr', gap: 20, marginBottom: 24, position: 'relative' }}>

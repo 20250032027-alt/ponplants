@@ -47,10 +47,10 @@ const steps: Step[] = [
       severity: 'critical',
       steps: [
         'Trim every mushy or hollow root back to firm, white tissue.',
-        'Check the stem base for soft spots. If you find any, the rot has spread — treat aggressively.',
+        'Check the stem base for soft spots. If you find any, the rot has spread. Treat aggressively.',
         'Treat with diluted hydrogen peroxide as above.',
         'Repot in clean, fresh substrate with correct reservoir gap.',
-        'Hold off on fertilizer until new white roots appear — usually 2 to 3 weeks.',
+        'Hold off on fertilizer until new white roots appear, usually 2 to 3 weeks.',
       ],
     },
   },
@@ -61,7 +61,7 @@ const steps: Step[] = [
     yesLabel: 'Yes, barely moved',
     noLabel: 'No, it drops regularly',
     yesResult: {
-      diagnosis: 'Root dysfunction — roots not drinking',
+      diagnosis: 'Root dysfunction: roots not drinking',
       severity: 'moderate',
       steps: [
         'Pull the plant and inspect for root congestion. Tightly packed roots in a small pot create an anaerobic zone inside the mass.',
@@ -190,7 +190,7 @@ export default function RootRotCheckerPage() {
             </div>
 
             <p style={{ fontSize: 12, color: 'var(--text-4)', textAlign: 'center' }}>
-              Pull the plant if you need to — inspecting the roots is always the most reliable answer.
+              Pull the plant if you need to. Inspecting the roots is always the most reliable answer.
             </p>
           </div>
         ) : (

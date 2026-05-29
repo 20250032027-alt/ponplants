@@ -104,9 +104,9 @@ export default function ReservoirPage() {
             <div>
               <label className="field-label">Ambient humidity</label>
               <select className="input" value={humidity} onChange={e => setHumidity(e.target.value)}>
-                <option value="low">Low — under 40%</option>
-                <option value="medium">Medium — 40 to 60%</option>
-                <option value="high">High — above 60%</option>
+                <option value="low">Low (under 40%)</option>
+                <option value="medium">Medium (40 to 60%)</option>
+                <option value="high">High (above 60%)</option>
               </select>
             </div>
             <div>

@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'Tools' }
+export const metadata: Metadata = {
+  title: 'Tools',
+  description: 'Interactive semi-hydro tools: reservoir depth calculator, root rot diagnostic checker, and fertilizer dosing reference chart.',
+  openGraph: { title: 'Semi-Hydro Tools | PonPlants', description: 'Reservoir calculator, root rot checker, and fertilizer chart for LECA and Pon growers.' },
+}
 
 const tools = [
   {
