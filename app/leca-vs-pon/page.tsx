@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import VideoEmbed from '@/components/VideoEmbed'
 
 export const metadata: Metadata = {
   title: 'LECA vs Pon: Full Comparison',
@@ -125,6 +126,30 @@ export default function LecaVsPon() {
               <p style={{ margin: 0, lineHeight: 1.65 }}>
                 A common approach is two parts Pon to one part LECA. The LECA adds air pockets and reduces density, while the Pon keeps moisture retention high enough for thirsty plants. For Lechuza planters specifically, mixing is practical because the bundled Pon bags rarely fill larger vessels.
               </p>
+            </div>
+          </section>
+
+          {/* Videos */}
+          <section style={{ marginTop: 48 }}>
+            <h2 className="serif" style={{ fontSize: '1.5rem', color: 'var(--text-1)', marginBottom: 6 }}>Watch instead of read</h2>
+            <p style={{ fontSize: 14, color: 'var(--text-3)', marginBottom: 20 }}>
+              These videos cover LECA basics and setup in practice. Good if you want to see it before you do it.
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+              <VideoEmbed
+                videoId="uuXVajqbRC0"
+                title="LECA Basics for Beginners / LECA 101 Semi Hydroponics"
+                creator="Chris"
+                channel="Pretty in Green"
+                note="Covers setup, reservoir depth, and getting started"
+              />
+              <VideoEmbed
+                videoId="mDkS9R5HW7o"
+                title="LECA Care Tips: 5 Semi Hydroponics Tricks"
+                creator="Chris"
+                channel="Pretty in Green"
+                note="Five practical tips for maintaining a LECA setup"
+              />
             </div>
           </section>
         </div>

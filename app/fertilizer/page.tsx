@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import VideoEmbed from '@/components/VideoEmbed'
 
 export const metadata: Metadata = {
   title: 'Fertilizer and Nutrient Dosing',
@@ -149,6 +150,21 @@ export default function Fertilizer() {
           <div className="callout callout-amber" style={{ marginTop: 32 }}>
             <strong>pH matters more in semi-hydro than in soil.</strong> Most nutrients become unavailable outside 5.5 to 6.5. Tap water is often above 7.0. If your plant is showing deficiency symptoms despite regular fertilizing, check pH before switching fertilizers.
           </div>
+
+          {/* Video */}
+          <section style={{ marginTop: 40 }}>
+            <h2 className="serif" style={{ fontSize: '1.5rem', color: 'var(--text-1)', marginBottom: 6 }}>Watch instead of read</h2>
+            <p style={{ fontSize: 14, color: 'var(--text-3)', marginBottom: 20 }}>
+              A practical look at fertilizer and substrate choices for semi-hydro.
+            </p>
+            <VideoEmbed
+              videoId="m7zAgiFKbfE"
+              title="My Favorite LECA Recipe: How to Grow Rare Plants in Semi Hydroponics"
+              creator="Chris"
+              channel="Pretty in Green"
+              note="Covers nutrient mix and substrate ratios in practice"
+            />
+          </section>
         </div>
 
         {/* Sidebar */}

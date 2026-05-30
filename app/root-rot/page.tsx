@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import VideoEmbed from '@/components/VideoEmbed'
 
 export const metadata: Metadata = {
   title: 'Root Rot Diagnosis and Fix',
@@ -150,6 +151,21 @@ export default function RootRot() {
           <div className="callout callout-amber">
             <strong>Alocasia note:</strong> Alocasia often cannibalize older leaves and roots when stressed or underfed. This gets misread as rot. Before treating, confirm the plant is getting adequate fertilizer and light. If only the oldest roots are dying back while new roots are white and firm, you are probably fine.
           </div>
+
+          {/* Video */}
+          <section style={{ marginTop: 40 }}>
+            <h2 className="serif" style={{ fontSize: '1.5rem', color: 'var(--text-1)', marginBottom: 6 }}>Watch instead of read</h2>
+            <p style={{ fontSize: 14, color: 'var(--text-3)', marginBottom: 20 }}>
+              Prefer a visual walkthrough? This covers the semi-hydro setup that prevents most root rot in the first place.
+            </p>
+            <VideoEmbed
+              videoId="uuXVajqbRC0"
+              title="LECA Basics for Beginners / LECA 101 Semi Hydroponics"
+              creator="Chris"
+              channel="Pretty in Green"
+              note="Covers reservoir setup and airspace: the two biggest root rot factors"
+            />
+          </section>
         </div>
 
         {/* Sidebar */}

@@ -143,6 +143,13 @@ export default function Nav() {
           <Dropdown label="By Plant" items={plants} />
           <Dropdown label="Tools" items={tools} />
           <div style={{ width: 1, height: 20, background: 'var(--border)', margin: '0 8px' }} />
+          <Link href="/about" style={{
+            padding: '6px 10px', borderRadius: 8, textDecoration: 'none',
+            fontSize: 14, fontWeight: 500, color: 'var(--text-2)', transition: 'color 0.15s',
+          }}
+            onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent)')}
+            onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-2)')}
+          >About</Link>
           <ThemeToggle />
         </nav>
 
@@ -183,6 +190,13 @@ export default function Nav() {
           ))}
           <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--text-4)', padding: '12px 8px 4px', marginTop: 4 }}>Tools</p>
           {tools.map(l => (
+            <Link key={l.href} href={l.href} onClick={() => setOpen(false)} style={{
+              display: 'block', padding: '10px 8px', borderRadius: 8, textDecoration: 'none',
+              fontSize: 15, fontWeight: 500, color: 'var(--text-1)',
+            }}>{l.label}</Link>
+          ))}
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--text-4)', padding: '12px 8px 4px', marginTop: 4 }}>More</p>
+          {[{ href: '/about', label: 'About' }, { href: '/contact', label: 'Contact' }].map(l => (
             <Link key={l.href} href={l.href} onClick={() => setOpen(false)} style={{
               display: 'block', padding: '10px 8px', borderRadius: 8, textDecoration: 'none',
               fontSize: 15, fontWeight: 500, color: 'var(--text-1)',

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import VideoEmbed from '@/components/VideoEmbed'
 
 export const metadata: Metadata = {
   title: 'Soil to Semi-Hydro Transition',
@@ -147,6 +148,21 @@ export default function Transition() {
                 </div>
               ))}
             </div>
+          </section>
+
+          {/* Video */}
+          <section style={{ marginTop: 12 }}>
+            <h2 className="serif" style={{ fontSize: '1.5rem', color: 'var(--text-1)', marginBottom: 6 }}>Watch instead of read</h2>
+            <p style={{ fontSize: 14, color: 'var(--text-3)', marginBottom: 20 }}>
+              A full walkthrough of the semi-hydro setup process, from bare root to finished pot.
+            </p>
+            <VideoEmbed
+              videoId="OBYoPWNkDA8"
+              title="Semi-Hydro Tutorial: Grow More Plants With Less Effort"
+              creator="Pretty in Green"
+              channel="YouTube"
+              note="Step-by-step transition and setup walkthrough"
+            />
           </section>
         </div>
 
