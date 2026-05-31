@@ -242,9 +242,11 @@ export default function Home() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(210px, 1fr))', gap: 14 }}>
             {[
-              { href: '/plants/alocasia', label: 'Alocasia',  sub: 'Most popular in semi-hydro',   tag: 'Most posts' },
-              { href: '/plants/pothos',   label: 'Pothos',    sub: 'Great for LECA beginners',      tag: 'Beginner-friendly' },
-              { href: '/plants/monstera', label: 'Monstera',  sub: 'LECA and Pon both work well',   tag: 'Versatile' },
+              { href: '/plants/alocasia',     label: 'Alocasia',     sub: 'Most popular in semi-hydro',    tag: 'Most posts' },
+              { href: '/plants/anthurium',    label: 'Anthurium',    sub: 'Sensitive but rewarding',       tag: 'Pon' },
+              { href: '/plants/philodendron', label: 'Philodendron', sub: 'Vining and non-vining types',   tag: 'LECA' },
+              { href: '/plants/monstera',     label: 'Monstera',     sub: 'LECA and Pon both work well',   tag: 'Versatile' },
+              { href: '/plants/pothos',       label: 'Pothos',       sub: 'Best starting point for LECA',  tag: 'Beginner' },
             ].map((p, i) => (
               <Link key={i} href={p.href} style={{ textDecoration: 'none' }}>
                 <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>

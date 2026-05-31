@@ -1,133 +1,203 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import VideoEmbed from '@/components/VideoEmbed'
 
 export const metadata: Metadata = {
-  title: 'Monstera in Pon Care Guide | PonPlants',
-  description: 'Growing Monstera deliciosa, Thai Constellation, and Adansonii in LECA and Pon. Fenestration, reservoir levels, fertilizer, and aerial root handling.',
+  title: 'Monstera in Semi-Hydro: LECA and Pon Guide',
+  description: 'Growing Monstera deliciosa, Thai Constellation, and Adansonii in LECA and Pon. Aerial roots, fenestration, reservoir levels, fertilizer, and variety-specific notes.',
 }
 
 export default function MonsteraPage() {
   return (
-    <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px 96px' }}>
-      <div style={{ padding: '64px 0 48px', borderBottom: '1px solid #e7e3dc', marginBottom: 64 }}>
-        <Link href="/" style={{ fontSize: 13, color: 'var(--text-3)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 5, marginBottom: 24 }}>
+    <div className="page-wrap" style={{ paddingBottom: 96 }}>
+      <div className="page-header">
+        <Link href="/" className="btn btn-secondary" style={{ marginBottom: 28, padding: '7px 14px', fontSize: 13 }}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          Back to home
+          Home
         </Link>
-        <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 12 }}>
-          Plant guide
-        </p>
-        <h1 style={{ fontFamily: 'Lora, Georgia, serif', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, color: 'var(--text-1)', letterSpacing: '-0.02em', marginBottom: 16 }}>
-          Monstera in Pon
+        <span className="eyebrow">Plant guide</span>
+        <h1 className="serif" style={{ fontSize: 'clamp(1.9rem, 4vw, 2.8rem)', color: 'var(--text-1)', marginBottom: 12 }}>
+          Monstera in semi-hydro
         </h1>
-        <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--text-2)', maxWidth: '65ch' }}>
-          Monstera in semi-hydro tend to produce larger leaves with more fenestration than their soil counterparts. The aerial root system adapts readily. The main challenge is managing a plant that can grow very large very fast.
+        <p className="prose">
+          Monstera in LECA or Pon tend to produce larger, more fenestrated leaves than the same plant in soil. The aerial root system adapts readily. The main thing to plan for is size, these plants grow fast once established, and they need space for both roots and substrate.
         </p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 16, marginBottom: 64 }}>
-        {[
-          { label: 'Best substrate', value: 'LECA or Pon', detail: 'Both work well preference varies' },
-          { label: 'Reservoir depth', value: '20 to 25%', detail: 'of pot height' },
-          { label: 'Water line', value: '2 to 3cm', detail: 'below substrate base' },
-          { label: 'Fertilizer', value: '1/4 tsp / gal', detail: 'Foliage Pro, every watering' },
-          { label: 'Aerial roots', value: 'Direct to reservoir', detail: 'or tuck into substrate' },
-          { label: 'Difficulty', value: 'Low to medium', detail: 'forgiving but needs space' },
-        ].map((item, i) => (
-          <div key={i} style={{ padding: '20px 22px', borderRadius: 14, backgroundColor: 'var(--surface-2)', border: '1px solid #e8e4de' }}>
-            <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', color: 'var(--text-3)', marginBottom: 6 }}>{item.label}</p>
-            <p style={{ fontFamily: 'Lora, Georgia, serif', fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-1)', marginBottom: 2 }}>{item.value}</p>
-            <p style={{ fontSize: 12, color: 'var(--text-4)', margin: 0 }}>{item.detail}</p>
+      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 48, alignItems: 'start' }} className="content-grid">
+        <div>
+          {/* Care card */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 12, marginBottom: 52 }}>
+            {[
+              { label: 'Best substrate',   value: 'LECA or Pon',     detail: 'Both work well. See varietyty notes below' },
+              { label: 'Reservoir depth',  value: '20 to 25%',       detail: 'of pot height' },
+              { label: 'Air gap',          value: '2 to 3cm',        detail: 'above water line' },
+              { label: 'Fertilizer',       value: '1/4 tsp per gallon', detail: 'Foliage Pro, every watering' },
+              { label: 'Aerial roots',     value: 'Leave or tuck in', detail: 'both approaches work fine' },
+              { label: 'Repot frequency',  value: 'Every 6 to 12 months', detail: 'roots fill pots fast here' },
+            ].map((item, i) => (
+              <div key={i} className="card-sm">
+                <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', color: 'var(--text-4)', marginBottom: 6 }}>{item.label}</p>
+                <p className="serif" style={{ fontSize: '1.05rem', color: 'var(--text-1)', marginBottom: 2 }}>{item.value}</p>
+                <p style={{ fontSize: 12, color: 'var(--text-4)', margin: 0 }}>{item.detail}</p>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, marginBottom: 64 }} className="two-col">
-        <div>
-          <h2 style={{ fontFamily: 'Lora, Georgia, serif', fontSize: '1.6rem', fontWeight: 700, color: 'var(--text-1)', marginBottom: 16 }}>Aerial roots and the reservoir</h2>
-          <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--text-2)', marginBottom: 14 }}>
-            Monstera aerial roots are opportunistic. They will find the reservoir if given a path to it, and roots that grow directly into water are perfectly healthy as long as the water is oxygenated by regular refreshing. Many growers direct one or two aerial roots into the reservoir and see accelerated growth as a result.
-          </p>
-          <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--text-2)', margin: 0 }}>
-            Aerial roots that dangle in air can be tucked into the substrate, wrapped around a moss pole, or left to hang freely. All three approaches work. The plant does not require aerial root intervention to thrive.
-          </p>
-        </div>
+          {/* Why it works */}
+          <section style={{ marginBottom: 48 }}>
+            <h2 className="serif" style={{ fontSize: '1.5rem', color: 'var(--text-1)', marginBottom: 16 }}>What semi-hydro actually does for Monstera</h2>
+            <p style={{ fontSize: 15, lineHeight: 1.8, color: 'var(--text-2)', marginBottom: 14 }}>
+              The fenestration increase is real and growers report it consistently. The reason is probably nutrient availability. In soil, nutrients are available in pulses between waterings. In LECA or Pon with a properly dosed reservoir, the plant has continuous access. Larger leaves with more splits follow from that stability, not from anything magical about the medium itself.
+            </p>
+            <p style={{ fontSize: 15, lineHeight: 1.8, color: 'var(--text-2)', marginBottom: 14 }}>
+              Light is still the main fenestration driver. A Monstera in LECA in a dark corner will produce small, uncut leaves just as it would in soil. Semi-hydro does not compensate for bad placement.
+            </p>
+            <p style={{ fontSize: 15, lineHeight: 1.8, color: 'var(--text-2)' }}>
+              Root mass development is dramatic. Growers who repot after six months are often surprised by how much root has developed compared to what they were used to seeing in soil. That gap is part of why LECA and Pon both work for Monstera, the plant roots aggressively enough that it does not need the moisture-holding advantage that Pon provides for more sensitive plants like Alocasia.
+            </p>
+          </section>
 
-        <div>
-          <h2 style={{ fontFamily: 'Lora, Georgia, serif', fontSize: '1.6rem', fontWeight: 700, color: 'var(--text-1)', marginBottom: 16 }}>Fenestration in semi-hydro</h2>
-          <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--text-2)', marginBottom: 14 }}>
-            Community growers consistently report larger leaves with more developed holes in Monstera grown in semi-hydro compared to soil. The most likely reason is consistent nutrient availability. In soil, nutrients deplete between feedings. In LECA or Pon with a properly dosed reservoir, the plant has continuous access to what it needs.
-          </p>
-          <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--text-2)', margin: 0 }}>
-            Light is still the primary driver of fenestration. Semi-hydro does not compensate for low light. A Monstera in LECA in a dark corner will produce small, less fenestrated leaves just as it would in soil.
-          </p>
-        </div>
-      </div>
-
-      {/* Varieties */}
-      <div style={{ marginBottom: 64 }}>
-        <h2 style={{ fontFamily: 'Lora, Georgia, serif', fontSize: '1.75rem', fontWeight: 700, color: 'var(--text-1)', marginBottom: 6 }}>Variety notes</h2>
-        <p style={{ fontSize: 14, color: 'var(--text-3)', marginBottom: 28 }}>Most Monstera adapt similarly, with a few differences worth knowing.</p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 20 }}>
-          {[
-            {
-              name: 'Monstera deliciosa',
-              note: 'The most forgiving variety. Large root systems develop quickly. Plan for a large pot early a 20cm pot becomes root-bound faster than you expect.',
-              substrate: 'LECA or Pon',
-            },
-            {
-              name: 'Monstera Thai Constellation',
-              note: 'Grows more slowly than standard deliciosa due to reduced chlorophyll in variegated sections. Otherwise the same care. Avoid high fertilizer concentrations the variegated tissue is more sensitive to salt.',
-              substrate: 'Pon preferred',
-            },
-            {
-              name: 'Monstera adansonii',
-              note: 'Smaller root system, faster to fill a pot. Responds very well to semi-hydro the fenestration increase is particularly noticeable. Prefers slightly higher humidity than standard deliciosa.',
-              substrate: 'LECA works well',
-            },
-            {
-              name: 'Monstera pinnatipartita',
-              note: 'Less common in the community database but reported to perform well in Pon. Treat similarly to deliciosa with slightly higher humidity targets.',
-              substrate: 'Pon',
-            },
-          ].map((v, i) => (
-            <div key={i} style={{ padding: '26px', borderRadius: 16, border: '1px solid #e7e3dc', backgroundColor: 'var(--surface)' }}>
-              <h3 style={{ fontFamily: 'Lora, Georgia, serif', fontSize: '1.05rem', fontWeight: 700, color: 'var(--text-1)', marginBottom: 8 }}>{v.name}</h3>
-              <span style={{ display: 'inline-block', marginBottom: 12, padding: '3px 10px', borderRadius: 999, backgroundColor: 'var(--accent-bg)', border: '1px solid #bbf7d0', color: 'var(--accent-text)', fontSize: 12, fontWeight: 600 }}>{v.substrate}</span>
-              <p style={{ fontSize: 13, lineHeight: 1.65, color: 'var(--text-2)', margin: 0 }}>{v.note}</p>
+          {/* Aerial roots */}
+          <section style={{ marginBottom: 48 }}>
+            <h2 className="serif" style={{ fontSize: '1.5rem', color: 'var(--text-1)', marginBottom: 16 }}>What to do with aerial roots</h2>
+            <p style={{ fontSize: 15, lineHeight: 1.8, color: 'var(--text-2)', marginBottom: 14 }}>
+              Monstera aerial roots are opportunistic. If you give them a path to the reservoir, they will find it. Roots in the water are healthy as long as the reservoir is refreshed regularly. Several growers direct aerial roots straight into the reservoir and report noticeably faster growth as a result.
+            </p>
+            <p style={{ fontSize: 15, lineHeight: 1.8, color: 'var(--text-2)', marginBottom: 14 }}>
+              You can also tuck aerial roots into the substrate. They will establish in the LECA and become part of the normal root system. Alternatively, just leave them to hang. The plant does not require any intervention on aerial roots to thrive.
+            </p>
+            <div className="callout callout-amber">
+              Aerial roots that go brown and crispy are usually a humidity or airflow problem, not a substrate problem. If a vent or fan is blowing directly on the plant, that is probably the cause.
             </div>
-          ))}
-        </div>
-      </div>
+          </section>
 
-      {/* Common problems */}
-      <div style={{ marginBottom: 64 }}>
-        <h2 style={{ fontFamily: 'Lora, Georgia, serif', fontSize: '1.75rem', fontWeight: 700, color: 'var(--text-1)', marginBottom: 28 }}>Common problems</h2>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-          {[
-            { issue: 'Yellowing lower leaves', cause: 'Normal aging on mature lower leaves. If the yellowing is widespread across the plant, check nitrogen levels and confirm your fertilizer contains all 16 nutrients.' },
-            { issue: 'Roots pushing out of drainage holes', cause: 'The pot is too small. Monstera outgrow pots faster in semi-hydro than in soil. Size up when roots are clearly congested.' },
-            { issue: 'No new growth after 6 weeks', cause: 'Check light levels first. Then check fertilizer. If both are adequate, the plant may still be establishing its water root system. Wait until week 8 before intervening.' },
-            { issue: 'Aerial roots going brown and crispy', cause: 'Low humidity or direct airflow from a fan or vent. Tuck them into substrate or mist them occasionally. They are not critical to the plant\'s health if they die back.' },
-          ].map((item, i) => (
-            <div key={i} style={{ padding: '20px 24px', borderRadius: 14, border: '1px solid #e7e3dc', backgroundColor: 'var(--surface)', display: 'grid', gridTemplateColumns: '220px 1fr', gap: 24, alignItems: 'center' }} className="problem-row">
-              <p style={{ fontWeight: 700, color: 'var(--text-1)', fontSize: 14, margin: 0 }}>{item.issue}</p>
-              <p style={{ fontSize: 14, color: 'var(--text-2)', lineHeight: 1.6, margin: 0 }}>{item.cause}</p>
+          {/* Varieties */}
+          <section style={{ marginBottom: 48 }}>
+            <h2 className="serif" style={{ fontSize: '1.5rem', color: 'var(--text-1)', marginBottom: 16 }}>Variety notes</h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+              {[
+                {
+                  name: 'Monstera deliciosa',
+                  substrate: 'LECA or Pon',
+                  note: 'The most forgiving variety and the most common in semi-hydro setups. Root systems get large fast. Plan for a 20cm or larger pot from the start, or expect to repot within six months. LECA is the more cost-effective choice here since you need a lot of substrate.',
+                },
+                {
+                  name: 'Monstera Thai Constellation',
+                  substrate: 'Pon preferred',
+                  note: 'Grows more slowly than standard deliciosa because the variegated sections have less chlorophyll. The reduced growth rate actually makes semi-hydro easier to manage since you are not repotting constantly. Keep fertilizer at half dose, variegated tissue is more sensitive to salt than all-green leaves.',
+                },
+                {
+                  name: 'Monstera adansonii',
+                  substrate: 'LECA',
+                  note: 'Smaller root system than deliciosa, faster to fill a pot. The fenestration increase in semi-hydro is particularly visible with adansonii. The holes are more pronounced and appear on smaller leaves than you would typically see in soil. Prefers slightly higher humidity.',
+                },
+                {
+                  name: 'Monstera pinnatipartita',
+                  substrate: 'Pon',
+                  note: 'Less documented in the community but reported to perform well. Treat similarly to deliciosa. The leaf splits are deeper and more dramatic than on adansonii, and consistent nutrition from semi-hydro appears to bring that out faster.',
+                },
+                {
+                  name: 'Monstera dubia',
+                  substrate: 'LECA',
+                  note: 'A shingling Monstera, meaning it grows flat against a surface. LECA works well here because it is easy to attach a board or bark panel to a pot without the mess of soil. Keep the pot small since the plant prioritizes climbing over root mass.',
+                },
+              ].map((v, i) => (
+                <div key={i} className="card" style={{ borderColor: 'var(--border)' }}>
+                  <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap', marginBottom: 10 }}>
+                    <h3 className="serif" style={{ fontSize: '1.05rem', color: 'var(--text-1)', margin: 0 }}>{v.name}</h3>
+                    <span className="badge badge-green" style={{ fontSize: 11 }}>{v.substrate}</span>
+                  </div>
+                  <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--text-2)', margin: 0 }}>{v.note}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </section>
 
-      <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-        <Link href="/tools" style={{ padding: '13px 24px', borderRadius: 12, backgroundColor: 'var(--accent)', color: '#fff', fontWeight: 600, fontSize: 14, textDecoration: 'none' }}>Reservoir Calculator</Link>
-        <Link href="/fertilizer" style={{ padding: '13px 24px', borderRadius: 12, backgroundColor: 'var(--surface-2)', border: '1px solid #e8e4de', color: 'var(--text-1)', fontWeight: 500, fontSize: 14, textDecoration: 'none' }}>Fertilizer guide</Link>
+          {/* Troubleshooting */}
+          <section style={{ marginBottom: 48 }}>
+            <h2 className="serif" style={{ fontSize: '1.5rem', color: 'var(--text-1)', marginBottom: 16 }}>Common problems</h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              {[
+                {
+                  problem: 'Yellow lower leaves',
+                  cause: 'Normal aging on the oldest leaves. If yellowing is widespread across multiple growth stages, check nitrogen. A soil fertilizer will not have enough.',
+                  fix: 'Confirm you are using a complete hydroponic fertilizer with all 16 nutrients. Dyna-Gro Foliage Pro at 1/4 tsp per gallon handles this.',
+                },
+                {
+                  problem: 'No new growth after 6 weeks',
+                  cause: 'Almost always light or temperature. The plant is not failing, it is just not being triggered to grow.',
+                  fix: 'Move to a brighter spot. Monstera in semi-hydro typically push a new leaf every 3 to 4 weeks in good light. If light is already bright, check that the temperature is not below 18 degrees C.',
+                },
+                {
+                  problem: 'Roots pushing out of drainage holes',
+                  cause: 'The pot is too small. This happens faster in semi-hydro than soil.',
+                  fix: 'Repot into a pot 3 to 5cm larger. A plant that has run out of room will slow down and start looking unwell regardless of how good the nutrient supply is.',
+                },
+                {
+                  problem: 'Leaves not fenestrating',
+                  cause: 'Light is the main variable. Young plants also do not fenestrate regardless of conditions.',
+                  fix: 'Move to brighter indirect light. Plants smaller than about 30cm typically will not produce split leaves no matter what you do.',
+                },
+                {
+                  problem: 'Salt crust visible on LECA',
+                  cause: 'Fertilizer buildup from not flushing regularly.',
+                  fix: 'Flush with plain pH-adjusted water until it runs clear. Then flush once every 4 to 5 weeks going forward. Monstera are not particularly salt-sensitive but buildup does eventually cause tip burn.',
+                },
+              ].map((item, i) => (
+                <div key={i} className="card">
+                  <h3 style={{ fontWeight: 700, color: 'var(--text-1)', fontSize: '0.95rem', marginBottom: 8 }}>{item.problem}</h3>
+                  <p style={{ fontSize: 14, color: 'var(--text-3)', marginBottom: 10, lineHeight: 1.6 }}>{item.cause}</p>
+                  <div className="callout callout-green" style={{ fontSize: 13 }}>
+                    <strong>Fix:</strong> {item.fix}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Video */}
+          <section>
+            <h2 className="serif" style={{ fontSize: '1.5rem', color: 'var(--text-1)', marginBottom: 6 }}>Watch instead of read</h2>
+            <p style={{ fontSize: 14, color: 'var(--text-3)', marginBottom: 20 }}>
+              A walkthrough of semi-hydro setup that applies directly to Monstera: substrate prep, reservoir depth, and the first few weeks.
+            </p>
+            <VideoEmbed
+              videoId="OBYoPWNkDA8"
+              title="Semi-Hydro Tutorial: Grow More Plants With Less Effort"
+              creator="Pretty in Green"
+              channel="YouTube"
+              note="Setup walkthrough applicable to Monstera and most aroids"
+            />
+          </section>
+        </div>
+
+        {/* Sidebar */}
+        <div style={{ position: 'sticky', top: 80, display: 'flex', flexDirection: 'column', gap: 14 }}>
+          <div className="card-sm">
+            <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', color: 'var(--text-4)', marginBottom: 12 }}>Tools</p>
+            <Link href="/tools/reservoir" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', marginBottom: 10 }}>Reservoir Calculator</Link>
+            <Link href="/tools/root-rot-checker" className="btn btn-secondary" style={{ width: '100%', justifyContent: 'center' }}>Root Rot Checker</Link>
+          </div>
+          <div className="card-sm">
+            <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', color: 'var(--text-4)', marginBottom: 12 }}>Related guides</p>
+            {[
+              { href: '/leca-vs-pon',     label: 'LECA vs Pon' },
+              { href: '/transition',      label: 'Soil transition' },
+              { href: '/fertilizer',      label: 'Fertilizer dosing' },
+              { href: '/plants/alocasia', label: 'Alocasia guide' },
+            ].map((l, i, arr) => (
+              <Link key={i} href={l.href} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 0', borderBottom: i < arr.length - 1 ? '1px solid var(--border)' : 'none', textDecoration: 'none', color: 'var(--text-2)', fontSize: 14, fontWeight: 500 }}>
+                {l.label}
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--text-4)" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
 
       <style>{`
-        @media (max-width: 700px) {
-          .two-col { grid-template-columns: 1fr !important; }
-          .problem-row { grid-template-columns: 1fr !important; }
-        }
+        @media (max-width: 900px) { .content-grid { grid-template-columns: 1fr !important; } }
       `}</style>
     </div>
   )

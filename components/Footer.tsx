@@ -19,7 +19,7 @@ export default function Footer() {
 
           <div>
             <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-4)', marginBottom: 12 }}>Guides</p>
-            {[['LECA vs Pon', '/leca-vs-pon'], ['Root Rot', '/root-rot'], ['Soil Transition', '/transition'], ['Fertilizer', '/fertilizer']].map(([l, h]) => (
+            {[['LECA vs Pon', '/leca-vs-pon'], ['Root Rot', '/root-rot'], ['Soil Transition', '/transition'], ['Fertilizer', '/fertilizer'], ['FAQ', '/faq']].map(([l, h]) => (
               <Link key={h} href={h} style={{ display: 'block', padding: '4px 0', fontSize: 14, color: 'var(--text-3)', textDecoration: 'none' }}>{l}</Link>
             ))}
           </div>
@@ -33,7 +33,7 @@ export default function Footer() {
 
           <div>
             <p style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-4)', marginBottom: 12 }}>By Plant</p>
-            {[['Alocasia', '/plants/alocasia'], ['Pothos', '/plants/pothos'], ['Monstera', '/plants/monstera']].map(([l, h]) => (
+            {[['Alocasia', '/plants/alocasia'], ['Anthurium', '/plants/anthurium'], ['Philodendron', '/plants/philodendron'], ['Monstera', '/plants/monstera'], ['Pothos', '/plants/pothos']].map(([l, h]) => (
               <Link key={h} href={h} style={{ display: 'block', padding: '4px 0', fontSize: 14, color: 'var(--text-3)', textDecoration: 'none' }}>{l}</Link>
             ))}
           </div>
@@ -48,7 +48,11 @@ export default function Footer() {
 
         <div style={{ borderTop: '1px solid var(--border)', paddingTop: 20, display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
           <p style={{ fontSize: 12, color: 'var(--text-4)', margin: 0 }}>Content sourced from r/SemiHydro community data.</p>
-          <p style={{ fontSize: 12, color: 'var(--text-4)', margin: 0 }}>© 2025 PonPlants</p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
+            <Link href="/privacy" style={{ fontSize: 12, color: 'var(--text-4)', textDecoration: 'none' }}>Privacy Policy</Link>
+            <Link href="/terms" style={{ fontSize: 12, color: 'var(--text-4)', textDecoration: 'none' }}>Terms of Use</Link>
+            <p style={{ fontSize: 12, color: 'var(--text-4)', margin: 0 }}>© 2025 PonPlants</p>
+          </div>
         </div>
       </div>
     </footer>

@@ -35,3 +35,8 @@ Indoor plant growers using or transitioning to semi-hydroponics — specifically
 ## Data sources
 
 Community posts and comments from r/SemiHydro and related plant care communities.
+- /plants/philodendron — Philodendron in LECA and Pon: vining vs non-vining types, variety notes, fertilizer, common problems
+- /plants/anthurium — Anthurium in semi-hydro: Pon preference, salt sensitivity, humidity needs, velvet vs glossy varieties
+- /faq — 20 common questions with direct answers covering all main semi-hydro topics
+- /about — What PonPlants is, how content is sourced, disclaimers
+- /contact — Contact form for corrections, questions, and suggestions

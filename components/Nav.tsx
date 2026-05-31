@@ -5,9 +5,10 @@ import { useState, useEffect, useRef } from 'react'
 
 const guides = [
   { href: '/leca-vs-pon', label: 'LECA vs Pon' },
-  { href: '/root-rot', label: 'Root Rot' },
-  { href: '/transition', label: 'Soil Transition' },
-  { href: '/fertilizer', label: 'Fertilizer' },
+  { href: '/root-rot',    label: 'Root Rot' },
+  { href: '/transition',  label: 'Soil Transition' },
+  { href: '/fertilizer',  label: 'Fertilizer' },
+  { href: '/faq',         label: 'FAQ' },
 ]
 
 const plants = [

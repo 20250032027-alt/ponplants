@@ -17,5 +17,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/plants/alocasia`,         lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/plants/pothos`,           lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/plants/monstera`,         lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/plants/philodendron`,     lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/plants/anthurium`,        lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/faq`,                     lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/about`,                   lastModified: now, changeFrequency: 'yearly',  priority: 0.4 },
+    { url: `${base}/contact`,                 lastModified: now, changeFrequency: 'yearly',  priority: 0.4 },
   ]
 }
