@@ -257,10 +257,9 @@ export default function Nav() {
       <div className="page-wrap" style={{ height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
         {/* Logo */}
         <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 9, flexShrink: 0 }}>
-          <div style={{ width: 32, height: 32, borderRadius: 9, background: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round">
-              <path d="M12 22V12"/><path d="M12 12C12 7 9 4 5 3"/><path d="M12 12c0-5 3-8 7-9"/><path d="M5 19c2-3 4-5 7-7"/>
-            </svg>
+          <div style={{ width: 32, height: 32, borderRadius: 9, overflow: 'hidden', flexShrink: 0 }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/icon.png" alt="PonPlants logo" width={32} height={32} style={{ width: 32, height: 32, display: 'block' }} />
           </div>
           <span className="serif" style={{ fontWeight: 400, fontSize: 19, color: 'var(--text-1)', letterSpacing: '-0.01em' }}>PonPlants</span>
         </Link>

@@ -7,8 +7,9 @@ export default function Footer() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: 32, marginBottom: 40 }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
-              <div style={{ width: 28, height: 28, borderRadius: 8, background: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round"><path d="M12 22V12"/><path d="M12 12C12 7 9 4 5 3"/><path d="M12 12c0-5 3-8 7-9"/><path d="M5 19c2-3 4-5 7-7"/></svg>
+              <div style={{ width: 28, height: 28, borderRadius: 7, overflow: 'hidden', flexShrink: 0 }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/icon.png" alt="PonPlants logo" width={28} height={28} style={{ width: 28, height: 28, display: 'block' }} />
               </div>
               <span style={{ fontFamily: 'Lora, Georgia, serif', fontWeight: 400, fontSize: 17, color: 'var(--text-1)' }}>PonPlants</span>
             </div>
