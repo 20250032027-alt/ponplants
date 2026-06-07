@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import SearchBar from '@/components/SearchBar'
 
 export const metadata: Metadata = {
   title: 'PonPlants: Semi-Hydro Troubleshooting for LECA and Pon Growers',
@@ -125,6 +126,11 @@ export default function Home() {
                 color: '#c8d8c0',
                 border: '1px solid rgba(255,255,255,0.13)',
               }}>Reservoir Calculator</Link>
+            </div>
+
+            {/* Search */}
+            <div style={{ marginTop: 28 }}>
+              <SearchBar />
             </div>
           </div>
         </div>
